@@ -20,8 +20,9 @@ class Bookshelf {
             return null;
         }
 
-        return this.#books.reduce((longest, book) => 
-            book.pages > longest.pages ? book : longest);
+        return this.#books.reduce((longest, book) =>
+            book.pages > longest.pages ? book : longest
+        );
     }
 
     // Returns the average page count, or 0 if the shelf is empty
@@ -37,6 +38,11 @@ class Bookshelf {
     // Returns an array of summary strings, one per book
     getBookSummaries() {
         return this.#books.map((book) => book.getSummary());
+    }
+
+    // Returns an array of detail objects, one per book (used for book cards)
+    getBookDetails() {
+        return this.#books.map((book) => book.getDetails());
     }
 }
 

@@ -11,9 +11,14 @@ class FictionBook extends Book {
         this.#genre = genre;
     }
 
-    // Returns "[titel] by [author], [page count] pages, [genre] - Fiction"
+    // Returns "[title] by [author], [page count] pages, [genre] - Fiction"
     getSummary() {
         return `${super.getSummary()}, ${this.#genre} - Fiction`;
+    }
+
+    // Adds the fiction-specific information to the parent's details
+    getDetails() {
+        return { ...super.getDetails(), type: "Fiction", category: this.#genre };
     }
 }
 

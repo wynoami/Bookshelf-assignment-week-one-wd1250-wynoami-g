@@ -25,6 +25,17 @@ class Book {
     getSummary() {
         return `${this.#title} by ${this.#author}, ${this.#pages} pages`;
     }
+
+    // Returns the book's information as an object (used to build book cards)
+    getDetails() {
+        return {
+            title: this.#title,
+            author: this.#author,
+            pages: this.#pages,
+            type: "Book",
+            category: null,
+        };
+    }
 }
 
 export default Book;
